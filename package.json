@@ -16,5 +16,8 @@
     "url": "https://github.com/Hanane2A/wave-s-in_back/issues"
   },
   "homepage": "https://github.com/Hanane2A/wave-s-in_back#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
 }
