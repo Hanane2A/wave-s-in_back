@@ -2,16 +2,16 @@
   "name": "wave-s-in_back",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
+"scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "npm run prisma:generate && node app.js",
     "prisma:generate": "npx prisma generate",
     "seed:all": "npm run seed:users && npm run seed:spots && npm run seed:comments && npm run seed:likes && npm run seed:pictures",
-    "seed:users": "node prisma/seeds/seedUsers.js",
-    "seed:spots": "node prisma/seeds/seedSpots.js",
-    "seed:comments": "node prisma/seeds/seedComments.js",
-    "seed:likes": "node prisma/seeds/seedLikes.js",
-    "seed:pictures": "node prisma/seeds/seedPictures.js"
+    "seed:users": "node prisma/seeds/seedUser.js",
+    "seed:spots": "node prisma/seeds/seedsSpot.js",
+    "seed:comments": "node prisma/seeds/seedsComment.js",
+    "seed:likes": "node prisma/seeds/seedsLike.js",
+    "seed:pictures": "node prisma/seeds/seedsPicture.js"
   },
   "repository": {
     "type": "git",

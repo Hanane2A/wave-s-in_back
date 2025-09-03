@@ -30,7 +30,7 @@ model User {
 }
 
 model Spot {
-  id          Int     @id @default(autoincrement())
+  id          Int      @id @default(autoincrement())
   name        String
   description String?
   favorite    String?
@@ -38,12 +38,13 @@ model Spot {
   likes       Int?
   latitude    Float?
   longitude   Float?
-  
+  region      String?  // Ajout de la colonne region
+
   // Relations
   comments    Comment[]
-  likesRel    Like[] // Renommage pour plus de clarté
+  likesRel    Like[]
   pictures    Picture[]
-  
+
   @@map("spot")
 }
 
