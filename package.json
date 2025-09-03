@@ -11,7 +11,8 @@
     "seed:spots": "node prisma/seeds/seedsSpot.js",
     "seed:comments": "node prisma/seeds/seedsComment.js",
     "seed:likes": "node prisma/seeds/seedsLike.js",
-    "seed:pictures": "node prisma/seeds/seedsPicture.js"
+    "seed:pictures": "node prisma/seeds/seedsPicture.js",
+    "seed": "npm run seed:all"
   },
   "repository": {
     "type": "git",
