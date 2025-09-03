@@ -24,7 +24,7 @@ const usersToSeed = [
   { firstname: 'Mehdi', name: 'Lemoine', email: 'mehdi.lemoine@surf.com', password: 'mehdi123', user_picture: 'https://randomuser.me/api/portraits/men/15.jpg' },
   { firstname: 'Anais', name: 'Laurent', email: 'anais.laurent@surf.com', password: 'anais123', user_picture: 'https://randomuser.me/api/portraits/women/16.jpg' },
   { firstname: 'Baptiste', name: 'Dubois', email: 'baptiste.dubois@surf.com', password: 'baptiste123', user_picture: 'https://randomuser.me/api/portraits/men/17.jpg' },
-  { firstname: 'Elise', name: 'Thomas', email: 'elise.thomas@surf.com', password: 'elise123', user_picture: 'https://randomuser.me/api/portraits/women/18.jpg' }
+  { firstname: 'Elise', name: 'Thomas', email: 'elise.thomas@surf.com', password: 'elise123', user_picture: 'https://zeus-surf.com/cdn/shop/articles/choisir-planche-surf-longboard.jpg?v=1710775825&width=2048' }
 ];
 
 async function main() {
