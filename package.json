@@ -3,7 +3,15 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run prisma:generate && node app.js",
+    "prisma:generate": "npx prisma generate",
+    "seed:all": "npm run seed:users && npm run seed:spots && npm run seed:comments && npm run seed:likes && npm run seed:pictures",
+    "seed:users": "node prisma/seeds/seedUsers.js",
+    "seed:spots": "node prisma/seeds/seedSpots.js",
+    "seed:comments": "node prisma/seeds/seedComments.js",
+    "seed:likes": "node prisma/seeds/seedLikes.js",
+    "seed:pictures": "node prisma/seeds/seedPictures.js"
   },
   "repository": {
     "type": "git",
@@ -16,5 +24,12 @@
     "url": "https://github.com/Hanane2A/wave-s-in_back/issues"
   },
   "homepage": "https://github.com/Hanane2A/wave-s-in_back#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "@prisma/client": "^6.15.0",
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "prisma": "^6.15.0"
+  }
 }

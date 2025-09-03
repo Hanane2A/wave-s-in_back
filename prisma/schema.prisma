@@ -1,0 +1,85 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int      @id @default(autoincrement())
+  firstname    String?
+  name         String?
+  email        String   @unique
+  password     String
+  user_picture String?
+  
+  // Relations
+  comments     Comment[]
+  likes        Like[]
+  
+  @@map("user")
+}
+
+model Spot {
+  id          Int     @id @default(autoincrement())
+  name        String
+  description String?
+  favorite    String?
+  save        String?
+  likes       Int?
+  latitude    Float?
+  longitude   Float?
+  
+  // Relations
+  comments    Comment[]
+  likesRel    Like[] // Renommage pour plus de clarté
+  pictures    Picture[]
+  
+  @@map("spot")
+}
+
+model Comment {
+  id            Int       @id @default(autoincrement())
+  spot_id       Int
+  user_id       Int
+  comment       String
+  creation_date DateTime?
+  
+  // Relations
+  spot          Spot      @relation(fields: [spot_id], references: [id])
+  user          User      @relation(fields: [user_id], references: [id])
+  
+  @@map("comment")
+}
+
+model Like {
+  id      Int @id @default(autoincrement())
+  user_id Int
+  spot_id Int
+  
+  // Relations
+  user    User @relation(fields: [user_id], references: [id])
+  spot    Spot @relation(fields: [spot_id], references: [id], map: "like")
+  
+  @@map("like")
+}
+
+model Picture {
+  id          Int    @id @default(autoincrement())
+  spot_id     Int
+  url_picture String?
+  
+  // Relations
+  spot        Spot   @relation(fields: [spot_id], references: [id])
+  
+  @@map("picture")
+}
