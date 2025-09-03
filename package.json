@@ -13,10 +13,7 @@
     "seed:likes": "node prisma/seeds/seedsLike.js",
     "seed:pictures": "node prisma/seeds/seedsPicture.js",
     "seed": "npm run seed:all"
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
   },
   "repository": {
     "type": "git",
