@@ -9,8 +9,8 @@
     "seed:all": "npm run seed:users && npm run seed:spots && npm run seed:comments && npm run seed:likes && npm run seed:pictures",
     "seed:users": "node prisma/seeds/seedUser.js",
     "seed:spots": "node prisma/seeds/seedsSpot.js",
-    "seed:comments": "node prisma/seeds/seedsComment.js",
-    "seed:likes": "node prisma/seeds/seedsLike.js",
+    "seed:comment": "node prisma/seeds/seedsComment.js",
+    "seed:like": "node prisma/seeds/seedsLike.js",
     "seed:pictures": "node prisma/seeds/seedsPicture.js",
     "seed": "npm run seed:all"
   },
