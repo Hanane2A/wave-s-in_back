@@ -7,9 +7,9 @@ async function main() {
 
 
   const bretagneSpots = [
-    { name: 'La Torche', description: 'Le spot le plus célèbre de Bretagne, idéal pour tous les niveaux.', latitude: 47.794, longitude: -4.342, region: 'Bretagne' },
-    { name: 'La Palue', description: 'Spot puissant et réputé en presqu’île de Crozon.', latitude: 48.225, longitude: -4.568, region: 'Bretagne' },
-    { name: 'Le Dossen', description: 'Spot de repli avec de belles vagues en fonction des marées.', latitude: 48.673, longitude: -4.011, region: 'Bretagne' },
+    { name: 'Plage la Torche-Tronoën', description: 'Le spot le plus célèbre de Bretagne, idéal pour tous les niveaux.', latitude: 47.794, longitude: -4.342, region: 'Bretagne' },
+    { name: 'La de la Palue', description: 'Spot puissant et réputé en presqu’île de Crozon.', latitude: 48.225, longitude: -4.568, region: 'Bretagne' },
+    { name: 'Plage de Dossen', description: 'Spot de repli avec de belles vagues en fonction des marées.', latitude: 48.673, longitude: -4.011, region: 'Bretagne' },
     { name: 'Audierne', description: 'Spot réputé pour ses vagues puissantes.', latitude: 48.016, longitude: -4.382, region: 'Bretagne' },
     { name: 'Crozon', description: 'Plusieurs spots autour de la presqu’île de Crozon.', latitude: 48.243, longitude: -4.502, region: 'Bretagne' },
   ];
@@ -17,7 +17,7 @@ async function main() {
   const charenteSpots = [
     { name: 'Plage du Petit Bec', description: 'Spot rocheux sur l’île de Ré, zone de surf connue.', latitude: 46.253494, longitude: -1.519705, region: 'Charente-Maritime' },
     { name: 'Plage de la Grande-Conche', description: 'Plage avec potentiel de surf sur la côte de Royan.', latitude: 45.616919, longitude: -1.014862, region: 'Charente-Maritime' },
-    { name: 'Vert Bois', description: 'Beach break exposé sur l’île d’Oléron, assez constant.', latitude: 45.8800, longitude: -1.2673, region: 'Charente-Maritime' },
+    { name: 'Plage de Vert Bois', description: 'Beach break exposé sur l’île d’Oléron, assez constant.', latitude: 45.8800, longitude: -1.2673, region: 'Charente-Maritime' },
     { name: 'Plage des Huttes', description: 'Spot exposé au nord-ouest de l’île d’Oléron.', latitude: 46.0277, longitude: -1.3990, region: 'Charente-Maritime' },
     { name: 'Conche des Baleines', description: 'Plage au nord de l’île de Ré, exposée à la houle.', latitude: 46.2422, longitude: -1.5781, region: 'Charente-Maritime' },
   ];
@@ -64,7 +64,6 @@ async function main() {
 
   const corseSpots = [
     { name: 'Ajaccio Capo Di Feno', description: 'Spot emblématique d’Ajaccio.', latitude: 41.944, longitude: 8.619, region: 'Corse' },
-    { name: 'Ajaccio Les CRS', description: 'Spot urbain de la baie d’Ajaccio.', latitude: 41.918, longitude: 8.736, region: 'Corse' },
     { name: 'Algajola', description: 'Beach break régulier en Balagne.', latitude: 42.611, longitude: 8.855, region: 'Corse' },
     { name: 'Farinole', description: 'Spot réputé du Cap Corse.', latitude: 42.784, longitude: 9.333, region: 'Corse' },
     { name: 'Calvi', description: 'Spot accessible pour débutants.', latitude: 42.566, longitude: 8.757, region: 'Corse' },
