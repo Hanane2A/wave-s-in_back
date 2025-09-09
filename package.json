@@ -3,23 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-  "test": "echo \"Error: no test specified\" && exit 1",
-  "dev": "npm run prisma:generate && node app.js",
-  "prisma:generate": "npx prisma generate",
-
-  "seed:users": "node prisma/seeds/seedUser.js",
-  "seed:spots": "node prisma/seeds/seedsSpot.js",
-  "seed:comments": "node prisma/seeds/seedsComment.js",
-  "seed:likes": "node prisma/seeds/seedsLike.js",
-  "seed:pictures": "node prisma/seeds/seedsPicture.js",
-  "seed:favorites": "node prisma/seeds/seedsFavorite.js",
-  "seed:saves": "node prisma/seeds/seedsSave.js",
-
-  "seed:all": "npm run seed:users && npm run seed:spots && npm run seed:pictures && npm run seed:comments && npm run seed:likes && npm run seed:favorites && npm run seed:saves",
-  "seed": "npm run seed:all"
-},
-
-  
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npm run prisma:generate && node app.js",
+    "prisma:generate": "npx prisma generate",
+    "seed:users": "node prisma/seeds/seedUser.js",
+    "seed:spots": "node prisma/seeds/seedsSpot.js",
+    "seed:comments": "node prisma/seeds/seedsComment.js",
+    "seed:likes": "node prisma/seeds/seedsLike.js",
+    "seed:pictures": "node prisma/seeds/seedsPicture.js",
+    "seed:favorites": "node prisma/seeds/seedsFavorite.js",
+    "seed:saves": "node prisma/seeds/seedsSave.js",
+    "seed:all": "npm run seed:users && npm run seed:spots && npm run seed:pictures && npm run seed:comments && npm run seed:likes && npm run seed:favorites && npm run seed:saves",
+    "seed": "npm run seed:all"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Hanane2A/wave-s-in_back.git"
@@ -35,6 +31,7 @@
   "dependencies": {
     "@prisma/client": "^6.15.0",
     "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
     "cors": "^2.8.5",
     "express": "^5.1.0"
   },
