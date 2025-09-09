@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id           BigInt     @id @default(autoincrement())
+  id           Int     @id @default(autoincrement())
   firstname    String?
   name         String?
   email        String     @unique
@@ -24,7 +24,7 @@ model User {
 }
 
 model Spot {
-  id          BigInt     @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   name        String
   description String?
   likes       Int?
@@ -41,9 +41,9 @@ model Spot {
 }
 
 model Comment {
-  id            BigInt   @id @default(autoincrement())
-  spot_id       BigInt
-  user_id       BigInt
+  id            Int   @id @default(autoincrement())
+  spot_id       Int
+  user_id       Int
   comment       String
   creation_date DateTime @default(now())
   spot          Spot     @relation(fields: [spot_id], references: [id], onDelete: Cascade)
@@ -53,9 +53,9 @@ model Comment {
 }
 
 model Like {
-  id      BigInt @id @default(autoincrement())
-  user_id BigInt
-  spot_id BigInt
+  id      Int @id @default(autoincrement())
+  user_id Int
+  spot_id Int
   spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
   user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
@@ -64,9 +64,9 @@ model Like {
 }
 
 model Favorite {
-  id      BigInt @id @default(autoincrement())
-  user_id BigInt
-  spot_id BigInt
+  id      Int @id @default(autoincrement())
+  user_id Int
+  spot_id Int
   spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
   user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
@@ -75,9 +75,9 @@ model Favorite {
 }
 
 model Save {
-  id      BigInt @id @default(autoincrement())
-  user_id BigInt
-  spot_id BigInt
+  id      Int @id @default(autoincrement())
+  user_id Int
+  spot_id Int
   spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
   user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
@@ -86,8 +86,8 @@ model Save {
 }
 
 model Picture {
-  id          BigInt  @id @default(autoincrement())
-  spot_id     BigInt
+  id          Int  @id @default(autoincrement())
+  spot_id     Int
   url_picture String?
   spot        Spot    @relation(fields: [spot_id], references: [id], onDelete: Cascade)
 
