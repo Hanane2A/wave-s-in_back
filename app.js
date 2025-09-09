@@ -3,6 +3,7 @@ const app = express();
 const cors = require('cors'); // importer cors
 
 app.use(cors()); // permet toutes les origines
+app.use(express.json());
 
 //ROUTES
 const spotsRoutes = require('./routes/spot');           // route pour récupérer tous les spots
