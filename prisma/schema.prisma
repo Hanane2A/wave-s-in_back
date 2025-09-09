@@ -63,7 +63,7 @@ model Like {
   spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
 
   @@unique([user_id, spot_id], name: "likes_user_spot_unique")
-  @@map("likes")
+  @@map("like")
 }
 
 model Favorite {

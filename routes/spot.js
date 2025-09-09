@@ -4,7 +4,10 @@ const { PrismaClient } = require('../generated/prisma');
 
 const prisma = new PrismaClient();
 
-// GET tous les spots
+/**
+ * GET /api/spot
+ * Récupère tous les spots
+ */
 router.get('/', async (req, res) => {
   try {
     const spots = await prisma.spot.findMany({
@@ -17,23 +20,26 @@ router.get('/', async (req, res) => {
       },
     });
 
-    // Convertir tous les BigInt en string
-    const spotsSafe = JSON.parse(JSON.stringify(spots, (_, v) =>
-      typeof v === 'bigint' ? v.toString() : v
-    ));
-
-    res.json(spotsSafe);
+    res.json(spots);
   } catch (error) {
-    console.error('Erreur Prisma:', error);
-    res.status(500).json({ error: error.message });
+    console.error('Erreur Prisma GET /api/spot:', error.message, error.stack);
+    res.status(500).json({ error: "Erreur serveur lors de la récupération des spots" });
   }
 });
 
-// GET spot par ID
+/**
+ * GET /api/spot/:id
+ * Récupère un spot par son ID
+ */
 router.get('/:id', async (req, res) => {
   try {
+    const spotId = parseInt(req.params.id, 10); // ✅ conversion en Int
+    if (isNaN(spotId)) {
+      return res.status(400).json({ error: 'ID invalide' });
+    }
+
     const spot = await prisma.spot.findUnique({
-      where: { id: BigInt(req.params.id) }, // garde BigInt ici
+      where: { id: spotId },
       include: {
         pictures: true,
         comments: true,
@@ -43,18 +49,16 @@ router.get('/:id', async (req, res) => {
       },
     });
 
-    if (!spot) return res.status(404).json({ error: 'Spot non trouvé' });
+    if (!spot) {
+      return res.status(404).json({ error: 'Spot non trouvé' });
+    }
 
-    // Convertir tous les BigInt en string avant d'envoyer
-    const spotSafe = JSON.parse(JSON.stringify(spot, (_, v) =>
-      typeof v === 'bigint' ? v.toString() : v
-    ));
-
-    res.json(spotSafe);
+    res.json(spot);
   } catch (error) {
-    console.error('Erreur Prisma:', error);
-    res.status(500).json({ error: error.message });
+    console.error('Erreur Prisma GET /api/spot/:id:', error.message, error.stack);
+    res.status(500).json({ error: "Erreur serveur lors de la récupération du spot" });
   }
 });
 
 module.exports = router;
+
