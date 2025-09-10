@@ -9,12 +9,15 @@ app.use(express.json());
 const spotsRoutes = require('./routes/spot');           // route pour récupérer tous les spots
 const spotPicturesRoutes = require('./routes/spotPictures'); // route pour récupérer les images
 const usersRoutes = require('./routes/user.js'); // route pour les users
+const likesRoutes = require('./routes/like');
 
 
 
 app.use('/spot', spotsRoutes);   // GET /api/spots
 app.use('/pictures', spotPicturesRoutes); // GET /spots/pictures
 app.use('/users',usersRoutes );
+app.use('/likes', likesRoutes);
+
 
 
 
