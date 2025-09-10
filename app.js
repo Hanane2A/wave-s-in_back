@@ -10,6 +10,8 @@ const spotsRoutes = require('./routes/spot');           // route pour récupére
 const spotPicturesRoutes = require('./routes/spotPictures'); // route pour récupérer les images
 const usersRoutes = require('./routes/user.js'); // route pour les users
 const likesRoutes = require('./routes/like');
+const favoritesRoutes = require('./routes/favorite');
+
 
 
 
@@ -17,7 +19,7 @@ app.use('/spot', spotsRoutes);   // GET /api/spots
 app.use('/pictures', spotPicturesRoutes); // GET /spots/pictures
 app.use('/users',usersRoutes );
 app.use('/likes', likesRoutes);
-
+app.use('/favorites', favoritesRoutes);
 
 
 
