@@ -4,7 +4,7 @@ const { PrismaClient } = require('../generated/prisma');
 
 const prisma = new PrismaClient();
 
-router.get('/pictures', async (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const pictures = await prisma.picture.findMany(); // juste toutes les photos
     res.json(pictures);

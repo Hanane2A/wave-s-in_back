@@ -12,8 +12,8 @@ const usersRoutes = require('./routes/user.js'); // route pour les users
 
 
 
-app.use('/api/spot', spotsRoutes);   // GET /api/spots
-app.use('/spots', spotPicturesRoutes); // GET /spots/pictures
+app.use('/spot', spotsRoutes);   // GET /api/spots
+app.use('/pictures', spotPicturesRoutes); // GET /spots/pictures
 app.use('/users',usersRoutes );
 
 
