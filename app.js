@@ -13,7 +13,7 @@ const usersRoutes = require('./routes/user.js'); // route pour les users
 
 
 app.use('/api/spot', spotsRoutes);   // GET /api/spots
-app.use('/spots', spotPicturesRoutes); // GET /spots/:id/pictures
+app.use('/spots', spotPicturesRoutes); // GET /spots/pictures
 app.use('/users',usersRoutes );
 
 

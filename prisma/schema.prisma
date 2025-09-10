@@ -9,7 +9,7 @@ datasource db {
 }
 
 model User {
-  id           Int     @id @default(autoincrement())
+  id           Int        @id @default(autoincrement())
   firstname    String?
   name         String?
   email        String     @unique
@@ -24,7 +24,7 @@ model User {
 }
 
 model Spot {
-  id          Int     @id @default(autoincrement())
+  id          Int        @id @default(autoincrement())
   name        String
   description String?
   likes       Int?
@@ -41,7 +41,7 @@ model Spot {
 }
 
 model Comment {
-  id            Int   @id @default(autoincrement())
+  id            Int      @id @default(autoincrement())
   spot_id       Int
   user_id       Int
   comment       String
@@ -53,40 +53,40 @@ model Comment {
 }
 
 model Like {
-  id      Int @id @default(autoincrement())
+  id      Int  @id @default(autoincrement())
   user_id Int
   spot_id Int
-  spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
-  user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  spot    Spot @relation(fields: [spot_id], references: [id], onDelete: Cascade)
+  user    User @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
   @@unique([user_id, spot_id], name: "likes_user_spot_unique")
   @@map("likes")
 }
 
 model Favorite {
-  id      Int @id @default(autoincrement())
+  id      Int  @id @default(autoincrement())
   user_id Int
   spot_id Int
-  spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
-  user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  spot    Spot @relation(fields: [spot_id], references: [id], onDelete: Cascade)
+  user    User @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
   @@unique([user_id, spot_id], name: "favorites_user_spot_unique")
   @@map("favorites")
 }
 
 model Save {
-  id      Int @id @default(autoincrement())
+  id      Int  @id @default(autoincrement())
   user_id Int
   spot_id Int
-  spot    Spot   @relation(fields: [spot_id], references: [id], onDelete: Cascade)
-  user    User   @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  spot    Spot @relation(fields: [spot_id], references: [id], onDelete: Cascade)
+  user    User @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
   @@unique([user_id, spot_id], name: "saves_user_spot_unique")
   @@map("saves")
 }
 
 model Picture {
-  id          Int  @id @default(autoincrement())
+  id          Int     @id @default(autoincrement())
   spot_id     Int
   url_picture String?
   spot        Spot    @relation(fields: [spot_id], references: [id], onDelete: Cascade)
