@@ -37,4 +37,30 @@ router.post('/', async (req, res) => {
   }
 });
 
+// ✅ Supprimer un favori par user_id et spot_id
+router.delete('/', async (req, res) => {
+  try {
+    const { user_id, spot_id } = req.body;
+
+    if (!user_id || !spot_id) {
+      return res.status(400).json({ error: 'user_id et spot_id sont requis' });
+    }
+
+    const deletedFavorite = await prisma.favorite.deleteMany({
+      where: { user_id, spot_id },
+    });
+
+    if (deletedFavorite.count === 0) {
+      return res.status(404).json({ error: 'Favori non trouvé' });
+    }
+
+    res.json({ message: 'Favori supprimé avec succès' });
+  } catch (error) {
+    console.error('Erreur DELETE /favorites:', error.message);
+    res.status(500).json({ error: "Erreur serveur lors de la suppression d’un favori" });
+  }
+});
+
+
+
 module.exports = router;
