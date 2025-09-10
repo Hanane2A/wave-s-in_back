@@ -5,7 +5,6 @@ const { PrismaClient } = require('../generated/prisma');
 const prisma = new PrismaClient();
 
 /**
- * GET /api/spot
  * Récupère tous les spots avec leurs relations
  */
 router.get('/', async (req, res) => {

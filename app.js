@@ -18,7 +18,7 @@ const commentRoutes = require('./routes/comment');
 
 
 
-app.use('/spot', spotsRoutes);   // GET /api/spots
+app.use('/spot', spotsRoutes);   // GET 
 app.use('/pictures', spotPicturesRoutes); // GET /spots/pictures
 app.use('/users',usersRoutes );
 app.use('/likes', likesRoutes);
