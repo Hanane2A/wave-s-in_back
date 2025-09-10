@@ -14,8 +14,7 @@ const usersRoutes = require('./routes/user.js'); // route pour les users
 const likesRoutes = require('./routes/like');
 const favoritesRoutes = require('./routes/favorite');
 const commentRoutes = require('./routes/comment');
-
-
+const savesRoutes = require('./routes/save');
 
 
 
@@ -25,7 +24,9 @@ app.use('/users',usersRoutes );
 app.use('/likes', likesRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/comments' , commentRoutes);
+
 app.use('/auth', require('./routes/auth'));
+app.use('/saves', savesRoutes);
 
 
 //404 
