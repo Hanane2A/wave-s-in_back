@@ -24,6 +24,7 @@ app.use('/users',usersRoutes );
 app.use('/likes', likesRoutes);
 app.use('/favorites', favoritesRoutes);
 app.use('/comments' , commentRoutes);
+app.use('/auth', require('./routes/auth'));
 
 //404 
 app.use((req, res) => {
